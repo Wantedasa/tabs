@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabs — free by wantedasa.dev</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; background:#0d1117; color:#e6edf3; padding:24px; text-align:center; }
+  .tag { font-size:.8rem; color:#8b949e; }
+  .note { font-size:.8rem; color:#6b7280; max-width:520px; }
+  
+</style>
+</head>
+<body>
+<div style="width:100%;max-width:420px"><div style="display:flex;gap:6px;margin-bottom:10px"><button class="tb" data-t="1" style="flex:1;padding:9px;border-radius:8px;border:1px solid #2f81f7;background:#2f81f7;color:#fff;cursor:pointer">One</button><button class="tb" data-t="2" style="flex:1;padding:9px;border-radius:8px;border:1px solid #30363d;background:#161b22;color:#e6edf3;cursor:pointer">Two</button></div><div data-p="1" class="tp" style="padding:16px;border:1px solid #30363d;border-radius:10px">First panel content.</div><div data-p="2" class="tp" style="display:none;padding:16px;border:1px solid #30363d;border-radius:10px">Second panel content.</div></div>
+
+<script>
+document.querySelectorAll('.tb').forEach(function(b){b.onclick=function(){var t=b.dataset.t;document.querySelectorAll('.tb').forEach(function(x){var on=x.dataset.t===t;x.style.background=on?'#2f81f7':'#161b22';x.style.color=on?'#fff':'#e6edf3';x.style.borderColor=on?'#2f81f7':'#30363d';});document.querySelectorAll('.tp').forEach(function(p){p.style.display=p.dataset.p===t?'block':'none';});};});
+</script>
+</body>
+</html>
